@@ -1,0 +1,35 @@
+generated: '2026-08-17'
+method: searched
+source: >-
+  Searched the whole reachable Wecasa estate 2026-08-17 for any published rate-limit policy:
+  https://www.wecasa.fr/ (200), https://help.wecasa.fr/fr/ (200), https://www.wecasa.fr/pro (200),
+  https://github.com/wecasa (200). No developer documentation exists to carry a limit.
+limit_count: 0
+note: >-
+  Wecasa documents no rate limits, because Wecasa publishes no API to limit. There is no
+  developer portal or API reference on which a limit could be stated, and no reachable API host
+  against which a live unauthenticated response could be observed — every candidate API hostname
+  (api., developers., developer., docs., app., admin., partners.wecasa.fr) fails to resolve in
+  DNS, so no RateLimit-*, X-RateLimit-* or Retry-After response header could be captured. The
+  only rate signalling found anywhere on the estate is crawler courtesy in robots.txt
+  (Crawl-delay: 10 for facebot, facebookexternalhit, IndeedBot, SemrushBot and AhrefsBot on
+  www.wecasa.fr; Crawl-delay: 1 on the Intercom-hosted pro.wecasa.fr help centre), which is a
+  politeness directive to search crawlers and NOT an API rate limit. It is recorded here so a
+  later round does not mistake it for one. No `RateLimits` pointer is wired in apis.yml, because
+  a file documenting the absence of limits must not be scored as a provider publishing limits.
+rate_limits: []
+observed_headers: []
+crawler_directives:
+- host: www.wecasa.fr
+  url: https://www.wecasa.fr/robots.txt
+  status: 200
+  crawl_delay: 10
+  applies_to: [facebot, facebookexternalhit, IndeedBot, SemrushBot, AhrefsBot]
+  is_api_rate_limit: false
+- host: pro.wecasa.fr
+  url: https://pro.wecasa.fr/robots.txt
+  status: 200
+  crawl_delay: 1
+  applies_to: ['*']
+  is_api_rate_limit: false
+  note: Served by Intercom's help-centre platform, not by Wecasa.

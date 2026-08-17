@@ -1,0 +1,222 @@
+generated: '2026-08-17'
+method: probed
+source: live HTTP probes of every reachable Wecasa host, 2026-08-17
+note: >-
+  No Wecasa-owned /.well-known/ document exists. Exactly one path on the whole estate returned a
+  200 — /.well-known/security.txt on pro.wecasa.fr and help.wecasa.fr — and that document
+  BELONGS TO INTERCOM, not to Wecasa (see third_party_documents below). Every other probed path
+  on every host returned 404. No WellKnown and no SecurityTxt pointer is wired in apis.yml,
+  because a recorded absence is not a served surface and a vendor's document served through a
+  CNAME'd subdomain is not the provider's own.
+served_documents: 0
+hosts_probed:
+- www.wecasa.fr
+- www.wecasa.co.uk
+- www.wecasa.de
+- www.wecasa.at
+- pro.wecasa.fr
+- help.wecasa.fr
+hosts_unresolvable:
+- api.wecasa.fr
+- developers.wecasa.fr
+- developer.wecasa.fr
+- docs.wecasa.fr
+- app.wecasa.fr
+- admin.wecasa.fr
+- status.wecasa.fr
+- partners.wecasa.fr
+- blog.wecasa.fr
+- cdn.wecasa.fr
+- assets.wecasa.fr
+third_party_documents:
+- url: https://pro.wecasa.fr/.well-known/security.txt
+  status: 200
+  content_type: text/plain
+  bytes: 713
+  owner: Intercom
+  accepted: false
+  rejection_reason: >-
+    STEP 0c ownership check FAILED. The document is served from a Wecasa-branded hostname but
+    identifies itself as Intercom's on every field: "# Intercom - reporting security
+    vulnerabilities to Intercom", Contact https://bugcrowd.com/intercom, Contact
+    mailto:security@intercom.com, Canonical https://app.intercom.com/.well-known/security.txt,
+    Policy https://www.bugcrowd.com/resource/standard-disclosure-terms/, Hiring
+    https://intercom.com/careers. pro.wecasa.fr and help.wecasa.fr are Wecasa's Intercom-hosted
+    help centre (help.wecasa.fr/fr/ serves an Intercom Next.js help centre titled "Centre d'aide
+    Wecasa"; pro.wecasa.fr is a second, unused help-centre hostname that 404s on every path
+    including its own root and its own advertised sitemap.xml). Intercom serves this same
+    platform-level security.txt from every customer's custom help-centre domain. Crediting it to
+    Wecasa would have wired a SecurityTxt pointer AND a VulnerabilityDisclosure/Security pointer
+    (4 pts) plus a bug-bounty claim, for a bounty programme Intercom runs and Wecasa has no part
+    in.
+  evidence:
+    server: cloudflare
+    same_document_on: [pro.wecasa.fr, help.wecasa.fr]
+    canonical_points_elsewhere: https://app.intercom.com/.well-known/security.txt
+- url: https://help.wecasa.fr/.well-known/security.txt
+  status: 200
+  content_type: text/plain
+  bytes: 713
+  owner: Intercom
+  accepted: false
+  rejection_reason: Byte-identical to the pro.wecasa.fr document above; same Intercom platform origin.
+probes:
+- host: www.wecasa.fr
+  path: /.well-known/security.txt
+  url: https://www.wecasa.fr/.well-known/security.txt
+  status: 404
+  content_type: text/html; charset=utf-8
+  file: null
+- host: www.wecasa.fr
+  path: /.well-known/openid-configuration
+  url: https://www.wecasa.fr/.well-known/openid-configuration
+  status: 404
+  content_type: text/html; charset=utf-8
+  file: null
+- host: www.wecasa.fr
+  path: /.well-known/oauth-authorization-server
+  url: https://www.wecasa.fr/.well-known/oauth-authorization-server
+  status: 404
+  content_type: text/html; charset=utf-8
+  file: null
+- host: www.wecasa.fr
+  path: /.well-known/api-catalog
+  url: https://www.wecasa.fr/.well-known/api-catalog
+  status: 404
+  content_type: text/html; charset=utf-8
+  file: null
+- host: www.wecasa.fr
+  path: /.well-known/ai-plugin.json
+  url: https://www.wecasa.fr/.well-known/ai-plugin.json
+  status: 404
+  content_type: text/html; charset=utf-8
+  file: null
+- host: www.wecasa.fr
+  path: /.well-known/agent-card.json
+  url: https://www.wecasa.fr/.well-known/agent-card.json
+  status: 404
+  content_type: text/html; charset=utf-8
+  file: null
+- host: www.wecasa.fr
+  path: /.well-known/agent.json
+  url: https://www.wecasa.fr/.well-known/agent.json
+  status: 404
+  content_type: text/html; charset=utf-8
+  file: null
+- host: www.wecasa.fr
+  path: /security.txt
+  url: https://www.wecasa.fr/security.txt
+  status: 404
+  content_type: text/html; charset=utf-8
+  file: null
+- host: www.wecasa.co.uk
+  path: /.well-known/security.txt
+  url: https://www.wecasa.co.uk/.well-known/security.txt
+  status: 404
+  content_type: text/html; charset=utf-8
+  file: null
+- host: www.wecasa.de
+  path: /.well-known/security.txt
+  url: https://www.wecasa.de/.well-known/security.txt
+  status: 404
+  content_type: text/html; charset=utf-8
+  file: null
+- host: www.wecasa.de
+  path: /.well-known/agent-card.json
+  url: https://www.wecasa.de/.well-known/agent-card.json
+  status: 404
+  content_type: text/html; charset=utf-8
+  file: null
+- host: www.wecasa.at
+  path: /.well-known/security.txt
+  url: https://www.wecasa.at/.well-known/security.txt
+  status: 404
+  content_type: text/html; charset=utf-8
+  file: null
+- host: pro.wecasa.fr
+  path: /.well-known/agent-card.json
+  url: https://pro.wecasa.fr/.well-known/agent-card.json
+  status: 404
+  content_type: text/plain; charset=utf-8
+  file: null
+- host: pro.wecasa.fr
+  path: /.well-known/agent.json
+  url: https://pro.wecasa.fr/.well-known/agent.json
+  status: 404
+  content_type: text/plain; charset=utf-8
+  file: null
+- host: pro.wecasa.fr
+  path: /.well-known/openid-configuration
+  url: https://pro.wecasa.fr/.well-known/openid-configuration
+  status: 404
+  content_type: text/plain; charset=utf-8
+  file: null
+- host: pro.wecasa.fr
+  path: /.well-known/oauth-authorization-server
+  url: https://pro.wecasa.fr/.well-known/oauth-authorization-server
+  status: 404
+  content_type: text/plain; charset=utf-8
+  file: null
+- host: pro.wecasa.fr
+  path: /.well-known/api-catalog
+  url: https://pro.wecasa.fr/.well-known/api-catalog
+  status: 404
+  content_type: text/plain; charset=utf-8
+  file: null
+- host: pro.wecasa.fr
+  path: /.well-known/ai-plugin.json
+  url: https://pro.wecasa.fr/.well-known/ai-plugin.json
+  status: 404
+  content_type: text/plain; charset=utf-8
+  file: null
+contract_discovery:
+  note: >-
+    STEP 0b contract discovery, run against every reachable host including the two Intercom
+    help-centre hostnames found this round. All of it missed. Wecasa is a server-rendered
+    Rails/Webpacker application (www.wecasa.fr serves complete HTML, not an SPA shell), so the
+    "JS-rendered docs hide the real spec on the API host" failure mode does not apply here — and
+    there is no API host to hide it on. Every plausible API/docs hostname fails to resolve in DNS
+    entirely, which is a stronger negative than a 404: the provider has never stood one up.
+  probes:
+  - url: https://www.wecasa.fr/openapi.json
+    status: 404
+  - url: https://www.wecasa.fr/openapi.yaml
+    status: 404
+  - url: https://www.wecasa.fr/swagger.json
+    status: 404
+  - url: https://www.wecasa.fr/api-docs
+    status: 404
+  - url: https://www.wecasa.fr/api
+    status: 404
+  - url: https://www.wecasa.fr/api/openapi.json
+    status: 404
+  - url: https://www.wecasa.fr/api/v1/openapi.json
+    status: 404
+  - url: https://www.wecasa.fr/graphql
+    status: 404
+  - url: https://www.wecasa.fr/llms.txt
+    status: 404
+  - url: https://www.wecasa.co.uk/openapi.json
+    status: 404
+  - url: https://www.wecasa.co.uk/llms.txt
+    status: 404
+  - url: https://pro.wecasa.fr/openapi.json
+    status: 404
+  - url: https://pro.wecasa.fr/swagger.json
+    status: 404
+  - url: https://pro.wecasa.fr/api-docs
+    status: 404
+  - url: https://pro.wecasa.fr/graphql
+    status: 404
+  - url: https://pro.wecasa.fr/llms.txt
+    status: 404
+  - url: https://status.wecasa.fr/
+    status: 0
+    note: DNS does not resolve; no status page is published.
+  - url: https://api.wecasa.fr/
+    status: 0
+    note: DNS does not resolve.
+  graphql: not-found
+  mcp: not-found
+  a2a: not-found
+  openapi: not-found

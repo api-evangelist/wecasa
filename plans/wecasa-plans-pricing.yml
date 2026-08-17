@@ -1,0 +1,20 @@
+generated: '2026-08-17'
+method: searched
+source: >-
+  https://www.wecasa.fr/pro (HTTP 200) and the Wecasa consumer booking funnel at
+  https://www.wecasa.fr/ (HTTP 200), searched 2026-08-17. Candidate pricing pages
+  https://www.wecasa.fr/page/tarifs, /tarifs and /prix all returned HTTP 404.
+plan_count: 0
+note: >-
+  Wecasa publishes NO API plans, because Wecasa publishes no API. There is no developer tier, no
+  free tier, no usage quota, no overage and no commercial API surface of any kind. What Wecasa
+  does publish is CONSUMER SERVICE PRICING — the per-service, per-duration price a household pays
+  for a cleaning, childcare, hairdressing, beauty, massage or coaching booking — and that price is
+  computed inside the booking funnel from the service, duration, frequency and postcode rather
+  than being listed on a standalone pricing page (every candidate /tarifs URL 404s). Consumer
+  service prices are not API plans and are deliberately NOT recorded here as such. On the supply
+  side, the /pro partner page markets earnings potential to independent professionals (up to
+  ~EUR 3,000/month claimed) — that is a recruitment claim, not a commercial API tier either.
+  This file therefore records an honest zero. No `Plans` pointer is wired in apis.yml, because a
+  file documenting the absence of plans must not be scored as a provider publishing plans.
+plans: []

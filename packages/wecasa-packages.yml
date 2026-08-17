@@ -1,0 +1,123 @@
+generated: '2026-08-17'
+method: searched
+source: >-
+  https://api.github.com/orgs/wecasa/repos (18 public repos, enumerated 2026-08-17) plus the
+  RubyGems metadata API (https://rubygems.org/api/v1/gems/<gem>.json) for every non-fork repo.
+  npm, PyPI, Packagist, NuGet, Maven Central, crates.io and pkg.go.dev were all searched for
+  "wecasa" and returned zero first-party results.
+note: >-
+  IMPORTANT — none of these packages is an SDK for a Wecasa API. Wecasa publishes no API, so
+  there is no client library to ship. What the Wecasa GitHub organization publishes is the
+  opposite: internal Ruby/Rails engineering tooling, and a client for SOMEBODY ELSE'S API
+  (Zoho Sign). Wecasa is a consumer of third-party APIs, not a producer of one. For that reason
+  apis.yml carries a `Packages` pointer at this file but deliberately carries NO `SDKs` pointer —
+  wiring `SDKs` would credit Wecasa with client libraries for an API it does not operate.
+package_count: 3
+sdk_count: 0
+registries_searched:
+- registry: rubygems
+  url: https://rubygems.org/api/v1/gems/
+  result: 2 first-party gems published
+- registry: npm
+  url: https://registry.npmjs.org/-/v1/search?text=wecasa
+  result: 0 results
+- registry: pypi
+  url: https://pypi.org/pypi/wecasa/json
+  result: 404
+- registry: packagist
+  url: https://packagist.org/search.json?q=wecasa
+  result: 0 first-party results (only an unrelated "ecasanes/*" substring match)
+- registry: maven-central
+  result: 0 results
+- registry: nuget
+  result: 0 results
+- registry: crates.io
+  result: 0 results
+- registry: pkg.go.dev
+  result: 0 results
+packages:
+- name: factory_seeder
+  language: ruby
+  registry: rubygems
+  official: true
+  is_api_sdk: false
+  version: 0.1.1
+  published: '2026-04-20'
+  downloads: 975
+  license: MIT
+  registry_url: https://rubygems.org/gems/factory_seeder
+  source: https://github.com/wecasa/factory_seeder
+  description: >-
+    Wecasa-authored Rails/FactoryBot developer tool for seeding a database from existing
+    factories. Original work by the Wecasa organization (not a fork). Internal engineering
+    tooling — unrelated to any Wecasa product API.
+- name: zoho_sign
+  language: ruby
+  registry: rubygems
+  official: true
+  is_api_sdk: false
+  wraps_third_party_api: Zoho Sign
+  version: 0.2.1
+  published: '2023-10-03'
+  downloads: 172512
+  license: MIT
+  registry_url: https://rubygems.org/gems/zoho_sign
+  source: https://github.com/wecasa/zoho_sign
+  homepage: https://www.zoho.com/sign/api
+  description: >-
+    Wecasa-authored Ruby wrapper for the Zoho Sign API. Original work by the Wecasa
+    organization (not a fork) and by far its most-installed gem. This is a client for Zoho's
+    API, not for a Wecasa API — it is evidence that Wecasa integrates third-party APIs, not
+    that it publishes one. Last release 2023-10-03.
+- name: action_dispatch-i18n_routing
+  language: ruby
+  registry: null
+  official: true
+  is_api_sdk: false
+  version: null
+  published: null
+  license: MIT
+  source: https://github.com/wecasa/action_dispatch-i18n_routing
+  description: >-
+    Wecasa-authored Rails routing helper for internationalized routes. Original work (not a
+    fork), last pushed 2026-02-03.
+  note: >-
+    version/published are null because this library is NOT published to any package registry —
+    https://rubygems.org/api/v1/gems/action_dispatch-i18n_routing.json returns "This rubygem
+    could not be found." It is installable only by git reference, so there is no registry
+    metadata to date. Checked 2026-08-17.
+forks_excluded:
+  note: >-
+    The remaining 15 repos in the Wecasa GitHub organization are forks of third-party projects
+    kept for internal patching, and are NOT first-party Wecasa packages. Recorded here so a
+    later round does not re-litigate them.
+  repos:
+  - rails
+  - rspec-rails
+  - cloudinary_gem
+  - geokit-rails
+  - sidekiq-limit_fetch
+  - prismic-ruby-kit
+  - omniauth-oauth2
+  - intercom-ruby
+  - amplitude-api
+  - octopush-ruby
+  - database_consistency
+  - ansible-role-mysql
+  - rails_wordpress
+  - rake-progressbar
+  - zoho_hub
+third_party_apis_consumed:
+  note: >-
+    Derived from the fork list and the public Woosmap case study. Not a Wecasa API surface —
+    recorded because it is the clearest available evidence of which side of the API economy
+    Wecasa sits on.
+  vendors:
+  - Zoho CRM
+  - Zoho Sign
+  - Intercom
+  - Cloudinary
+  - Amplitude
+  - Prismic
+  - Octopush
+  - Woosmap
