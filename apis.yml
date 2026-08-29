@@ -11,6 +11,17 @@ description: 'Wecasa is a French on-demand home-services marketplace that connec
   contract — the platform is a consumer application and a partner-onboarding funnel, not a
   developer product.'
 url: https://raw.githubusercontent.com/api-evangelist/wecasa/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.wecasa.fr/assets/wecasa-social-logo-6c1be70d86b862e2d55d6968f50c56a9b37fc182ecadbfb12e1cad6ca8206a58.jpg
 x-type: company
 x-source: serena-portfolio
