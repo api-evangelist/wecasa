@@ -22,6 +22,19 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - rate-limits
+  - security
+  generated: '2026-09-02'
+  method: derived
 image: https://www.wecasa.fr/assets/wecasa-social-logo-6c1be70d86b862e2d55d6968f50c56a9b37fc182ecadbfb12e1cad6ca8206a58.jpg
 x-type: company
 x-source: serena-portfolio
